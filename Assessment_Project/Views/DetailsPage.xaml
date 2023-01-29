@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assessment_Project.Views.DetailsPage"
+             Title="UserData"
+             BackgroundColor="AliceBlue">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="20">
+            <Frame Style="{StaticResource Frame}">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Id : " Style="{StaticResource HeadingText}"></Span>
+                            <Span Text="{Binding modelData.id}" Style="{StaticResource BodyText}"></Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Frame>
+            <Frame Style="{StaticResource Frame}">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="UserId : " Style="{StaticResource HeadingText}"></Span>
+                            <Span Text="{Binding modelData.userId}" Style="{StaticResource BodyText}"></Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Frame>
+            <Frame Style="{StaticResource Frame}">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Title : " Style="{StaticResource HeadingText}"></Span>
+                            <Span Text="{Binding modelData.title}" Style="{StaticResource BodyText}"></Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Frame>
+
+            <Frame Style="{StaticResource Frame}">
+                <StackLayout>
+                    <Label Text="Body:" Style="{StaticResource HeadingText}"></Label>
+                    <Label Text="{Binding modelData.body}" Style="{StaticResource BodyText}"></Label>
+                </StackLayout>
+            </Frame>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

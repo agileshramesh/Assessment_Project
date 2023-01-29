@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:ViewModels="clr-namespace:Assessment_Project.ViewModels"
+             x:Class="Assessment_Project.Views.HomePage" BackgroundColor="AliceBlue"
+             Title="HomePage">
+    <ContentPage.BindingContext>
+        <ViewModels:HomeViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="OverView" 
+                   Style="{StaticResource HeadingText}" 
+                   HorizontalOptions="CenterAndExpand"></Label>
+            <CollectionView x:Name="Post_List" 
+                            ItemsSource="{Binding List}"
+                            SelectionMode="Single"
+                            Margin="15,0,15,0">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"></LinearItemsLayout>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame  Style="{StaticResource Frame}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <StackLayout>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Title : " Style="{StaticResource HeadingText}"></Span>
+                                            <Span Text="{Binding title}" Style="{StaticResource BodyText}"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
