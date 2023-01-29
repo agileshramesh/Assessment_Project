@@ -1,1 +1,0 @@
-D:\New folder\Assessment_Project\Assessment_Project.UWP\Assessment_Project.UWP.csproj;x64
